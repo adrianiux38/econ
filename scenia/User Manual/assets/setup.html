@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>Scenia User Manual</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="dockbar navbar-fixed-top">
+    <menu class="main-menu">
+      <div class="container">
+        <div class="row">
+          <a href="../readme.html" class="man-brand span3"><span class="logotype">Scenia</span> <span class="doc-title">User Manual</span></a>
+          <button id="open-close-menu" class="menu-btn btn-inverse"><span class="fui-list"></span></button>
+          <dl class="span8">
+            <dd><a href="../readme.html">overview</a>
+            </dd>
+            <dd><a class="active" href="setup.html">setup</a>
+            </dd>
+            <dd><a href="installation.html">installation</a>
+            </dd>
+            <dd><a href="credits.html">credits</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </menu>
+    <menu class="sub-menu">
+      <div class="container">
+        <div class="row">
+          <span class="sm-title span3">components</span>
+          <dl class="local-scroll span9">
+            <dd><a href="#section1">File Structure</a>
+            </dd>
+            <dd><a href="#section2">Fonts</a>
+            </dd>
+            <dd><a href="#section3">Portfolio</a>
+            </dd>
+            <dd><a href="#section4">Portfolio Filtering</a>
+            </dd>
+            <dd><a href="#section5">3D</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </menu>
+  </nav>
+
+   <section id="section1" class="manual-pages">
+    <div class="container">
+      <div class="row">
+        <div class="span9" style="margin-top: 95px;">
+          <h2>File Structure</h2>
+          <br>
+          <h6>Grid</h6>
+          <p>The responsive grid used in Scenia is Bootstrap. You can learn more about the grid itself and it's classes <a href="http://getbootstrap.com/css/#grid" target="_blank">here</a>.</p>
+          <br>
+          <h6>SCSS</h6>
+          <p>We've utilised SCSS for the creation of Scenia. The file structure of the SCSS files is easy to follow and intuitive. We follow a design system structure that includes thing like layouts, helpers, functions and mixins. In a addition to this we've provided a set of variables that are used within the code, so you can change colors and fonts easily through editing the variables file alone.</p>
+          <br>
+          <h6>3D</h6>
+          <p>For the 3D effects in addition to the main ThreeJS library we have included separate 'setup' scripts, that can be tweaked in the <tt>js/3d/</tt> directory. Within those you will find some setting for the rendering, colors and camera positions of all the scene created for Scenia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section2" class="manual-pages">
+    <div class="container">
+      <div class="row">
+        <div class="span9" style="margin-top: 95px;">
+          <h2>Fonts</h2>
+          <p>The fonts used in Scenia are from the Google web font library. You can change the font by editing the url provided in the HTML where marked and reflect that change in the <tt>_variables.scss</tt> file. To learn more and choose the perfect font for you site just head over to <a href="https://fonts.google.com" target="_blank">Google Fonts</a>.</p>
+          <img src="images/fonts.jpg" style="margin-top: 40px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section3" class="manual-pages">
+    <div class="container">
+      <div class="row">
+        <div class="span9" style="margin-top: 95px;">
+          <h2>AJAX Portfolio</h2>
+          <p>Scenia utilises AJAX for the portfolio, meaning there a couple of things that need to be done in order for it to work.<br><small><i>The AJAX potfolio may not work locally for you, if so just download an app like WAMP or MAMP to set up a local server environment and test the functionality of the portfolio.</i></small></p>
+          <p>The first part is setting up your index page with the portfolio grid. Here you would link your projects by prepending <tt>'#!'</tt> to the path of your project.</p>
+          <img src="images/folio1.jpg" style="margin-top: 40px;">
+          <p>The second part of the set up would be the project page itself. The project files are fully functional on their own and the main content section (excluding the header and footer) are loaded in the home page by AJAX. To make the portfolio slider images work you need to give them direct paths to your server in order to work. Setting up the project itself is pretty straightforward - just remember that when you call in images you have to do it in the way shown in the template, so that when a user decides to open the project page directly, the experience won't be ruined.</p>
+          <p>The projects utilize a slider function, so all the images you put in the slider list will be part of the slider. If you wish to have only one image for instance just remove the slider markup. The other part of the project is straightforward html markup so just fill in the info and you are done. Video embedding works straight our of the box. Look up project 1 for an example.</p>
+          <img src="images/folio2.jpg" style="margin-top: 40px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section4" class="manual-pages">
+    <div class="container">
+      <div class="row">
+        <div class="span9" style="margin-top: 95px;">
+          <h2>Portfolio Filtering</h2>
+          <p>Setting up the portfoilo filters relies on two parts - creating the filter option and then attaching a given project to this filter option.</p>
+          <p>To create the filter option just add a new list item in the filters unordered list, give the new item a 'data-filter' attribute to the filtering category you want it show upon clicking.</p>
+          <img src="images/filters1.jpg" style="margin-top: 40px;">
+          <p>After that you need to assign a project to that filter. To do that all you have to do is give your project a class name that is an equivalent to the 'data-filter' attribute you have already created.</p>
+          <img src="images/filters2.jpg" style="margin-top: 40px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section5" class="manual-pages">
+    <div class="container">
+      <div class="row">
+        <div class="span9" style="margin-top: 95px;">
+          <h2>3D</h2>
+          <p>The 3D effects Scenia utilises rely on the amazing ThreeJS library. We suggest that you get familiar with the basic by going through the extensive documentation <a href="https://threejs.org/docs/index.html#manual/introduction/Creating-a-scene" target="_blank">here</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manual-pages">
+    <div class="container">
+      <div class="row man-items">
+        <div class="span3">
+          <h3>Installation</h3>
+          <p>Installing Scenia on your server is easy. Just a simple FTP upload.</p>
+          <a href="installation.html" class="learn-more">Learn More</a>
+        </div>
+        <div class="span3">
+          <h3>Credits</h3>
+          <p>Take a look at some of the resources that we used to create Scenia.</p>
+          <a href="credits.html" class="learn-more">Learn More</a>
+        </div>
+        <div class="span3">
+          <h3>Have a Question?</h3>
+          <p>If you need some help just head over to the support forums.</p>
+          <a href="http://aether.ticksy.com" target="_blank" class="learn-more">Support Centre</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.scrollto.js"></script>
+  <script src="js/jquery.localscroll.js"></script>
+  <script src="js/prism.js"></script>
+  <script type="text/javascript">
+    $('.local-scroll').localScroll({
+        duration: 800
+    });
+  </script>
+</body>
+</html>
